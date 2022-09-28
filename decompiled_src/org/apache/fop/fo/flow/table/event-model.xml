@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event-model>
+<producer name="org.apache.fop.fo.flow.table.TableEventProducer">
+<method name="nonAutoBPDOnTable" severity="WARN">
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="noTablePaddingWithCollapsingBorderModel" severity="WARN">
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="noMixRowsAndCells" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="footerOrderCannotRecover" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="startEndRowUnderTableRowWarning" severity="WARN">
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="tooManyCells" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="valueMustBeBiggerGtEqOne" severity="FATAL" exception="org.apache.fop.fo.expr.PropertyException">
+<parameter type="java.lang.String" name="propName"/>
+<parameter type="java.lang.Integer" name="actualValue"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="warnImplicitColumns" severity="WARN">
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="paddingNotApplicable" severity="WARN">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="cellOverlap" severity="FATAL" exception="org.apache.fop.fo.expr.PropertyException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.Integer" name="column"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="forceNextColumnNumber" severity="WARN">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.Number" name="propValue"/>
+<parameter type="java.lang.Integer" name="columnNumber"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="breakIgnoredDueToRowSpanning" severity="WARN">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.Boolean" name="breakBefore"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+</producer>
+</event-model>

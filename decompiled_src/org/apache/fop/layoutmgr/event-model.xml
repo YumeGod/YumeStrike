@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event-model>
+<producer name="org.apache.fop.layoutmgr.BlockLevelEventProducer">
+<method name="rowTooTall" severity="WARN">
+<parameter type="java.lang.Integer" name="row"/>
+<parameter type="java.lang.Integer" name="effCellBPD"/>
+<parameter type="java.lang.Integer" name="maxCellBPD"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="tableFixedAutoWidthNotSupported" severity="INFO">
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="objectTooWide" severity="WARN">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.Integer" name="effIPD"/>
+<parameter type="java.lang.Integer" name="maxIPD"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="overconstrainedAdjustEndIndent" severity="INFO">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.Integer" name="amount"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="viewportOverflow" severity="FATAL" exception="org.apache.fop.layoutmgr.LayoutException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.Integer" name="amount"/>
+<parameter type="java.lang.Boolean" name="clip"/>
+<parameter type="java.lang.Boolean" name="canRecover"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="regionOverflow" severity="FATAL" exception="org.apache.fop.layoutmgr.LayoutException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.String" name="page"/>
+<parameter type="java.lang.Integer" name="amount"/>
+<parameter type="java.lang.Boolean" name="clip"/>
+<parameter type="java.lang.Boolean" name="canRecover"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="flowNotMappingToRegionBody" severity="FATAL" exception="java.lang.UnsupportedOperationException">
+<parameter type="java.lang.String" name="flowName"/>
+<parameter type="java.lang.String" name="masterName"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="pageSequenceMasterExhausted" severity="FATAL" exception="org.apache.fop.fo.pagination.PageProductionException">
+<parameter type="java.lang.String" name="pageSequenceMasterName"/>
+<parameter type="java.lang.Boolean" name="canRecover"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="missingSubsequencesInPageSequenceMaster" severity="FATAL" exception="org.apache.fop.fo.pagination.PageProductionException">
+<parameter type="java.lang.String" name="pageSequenceMasterName"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="noMatchingPageMaster" severity="FATAL" exception="org.apache.fop.fo.pagination.PageProductionException">
+<parameter type="java.lang.String" name="pageSequenceMasterName"/>
+<parameter type="java.lang.String" name="pageMasterName"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="nonRestartableContentFlowingToNarrowerPage" severity="WARN"/>
+</producer>
+</event-model>

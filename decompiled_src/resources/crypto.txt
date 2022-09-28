@@ -1,0 +1,10 @@
+Well... this is unfortunate. The above exception is a failure when the team
+server tries to encrypt communication destined for your Beacon. If the key
+is not NULL [the above message will say (null) if it is] then we may have
+hit a bug in Cobalt Strike or within Java itself. That's no fun!
+
+The good news? Restart your team server and you will be able to control your
+Beacons again. The bad news? I still have no idea what's causing this. If
+you could report this message [the stacktrace above helps!] and send the
+contents of debug.txt to support@strategiccyber.com. I'd greatly appreciate
+it.

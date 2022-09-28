@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event-model>
+<producer name="org.apache.fop.render.pdf.PDFEventProducer">
+<method name="nonFullyResolvedLinkTargets" severity="WARN">
+<parameter type="java.lang.Integer" name="count"/>
+</method>
+<method name="nonStandardStructureType" severity="WARN">
+<parameter type="java.lang.String" name="fo"/>
+<parameter type="java.lang.String" name="type"/>
+<parameter type="java.lang.String" name="fallback"/>
+</method>
+</producer>
+</event-model>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event-model>
+<producer name="org.apache.fop.fonts.FontEventProducer">
+<method name="fontSubstituted" severity="WARN">
+<parameter type="org.apache.fop.fonts.FontTriplet" name="requested"/>
+<parameter type="org.apache.fop.fonts.FontTriplet" name="effective"/>
+</method>
+<method name="fontLoadingErrorAtAutoDetection" severity="WARN">
+<parameter type="java.lang.String" name="fontURL"/>
+<parameter type="java.lang.Exception" name="e"/>
+</method>
+<method name="glyphNotAvailable" severity="WARN">
+<parameter type="java.lang.Character" name="ch"/>
+<parameter type="java.lang.String" name="fontName"/>
+</method>
+</producer>
+</event-model>

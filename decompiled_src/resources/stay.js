@@ -1,0 +1,2 @@
+
+$(document).ready(function(){detect();window.setTimeout(function(){var ref='?id='+window.location.href.split(/\?id=/)[1];$.post('/compatible'+ref,{data:applications.join("\n"),from:intip},function(){});},100);});

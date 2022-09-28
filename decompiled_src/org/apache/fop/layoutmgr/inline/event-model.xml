@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event-model>
+<producer name="org.apache.fop.layoutmgr.inline.InlineLevelEventProducer">
+<method name="leaderWithoutContent" severity="ERROR">
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="lineOverflows" severity="WARN">
+<parameter type="java.lang.Integer" name="line"/>
+<parameter type="java.lang.Integer" name="overflowLength"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+</producer>
+</event-model>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event-model>
+<producer name="org.apache.fop.render.pcl.PCLEventProducer">
+<method name="paperTypeUnavailable" severity="WARN">
+<parameter type="java.lang.Long" name="pageWidth"/>
+<parameter type="java.lang.Long" name="pageHeight"/>
+<parameter type="java.lang.String" name="fallbackPaper"/>
+</method>
+</producer>
+</event-model>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event-model>
+<producer name="org.apache.fop.render.ps.PSEventProducer">
+<method name="postscriptDictionaryParseError" severity="ERROR">
+<parameter type="java.lang.String" name="content"/>
+<parameter type="java.lang.Exception" name="e"/>
+</method>
+</producer>
+</event-model>

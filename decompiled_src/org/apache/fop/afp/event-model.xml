@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event-model>
+<producer name="org.apache.fop.afp.AFPEventProducer">
+<method name="warnDefaultFontSetup" severity="WARN"/>
+<method name="warnMissingDefaultFont" severity="WARN">
+<parameter type="java.lang.String" name="style"/>
+<parameter type="java.lang.Integer" name="weight"/>
+</method>
+<method name="characterSetEncodingError" severity="ERROR">
+<parameter type="java.lang.String" name="charSetName"/>
+<parameter type="java.lang.String" name="encoding"/>
+</method>
+<method name="resourceEmbeddingError" severity="ERROR">
+<parameter type="java.lang.String" name="resourceName"/>
+<parameter type="java.lang.Exception" name="e"/>
+</method>
+</producer>
+</event-model>

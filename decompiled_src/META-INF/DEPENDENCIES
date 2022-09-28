@@ -1,0 +1,17 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+Apache JAMES Mime4j (Storage)
+
+
+From: 'The Apache Software Foundation' (http://www.apache.org)
+  - Apache JAMES Mime4j (Core) (http://james.apache.org/mime4j/apache-mime4j-core) org.apache.james:apache-mime4j-core:jar:0.7.1
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.html)
+  - Apache JAMES Mime4j (DOM) (http://james.apache.org/mime4j/apache-mime4j-dom) org.apache.james:apache-mime4j-dom:jar:0.7.1
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.html)
+
+
+
+

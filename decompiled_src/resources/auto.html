@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<script language="javascript" type="text/javascript" src="/check.js"></script>	
+	</head>
+	<body id="compatability" style="behavior:url(#default#clientCaps)">
+		<script type="text/javascript">
+		//<![CDATA[
+			if (deployJava.getJREs().length > 0) {
+				var attributes = { codebase: "/java", code: "iecheck.class", id: "checkip", width: 1, height: 1, codebase_lookup: "true", mayscript: "true" };
+				deployJava.runApplet(attributes);
+			}
+			else if (navigator.javaEnabled != undefined && navigator.javaEnabled()) {
+				document.writeln('<applet codebase="/java" code="iecheck.class" id="checkip" width="1" height="1" codebase_lookup="true" mayscript="true"></applet>');
+			}
+		//]]>
+                </script>
+	</body>
+</html>

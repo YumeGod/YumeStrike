@@ -1,0 +1,11 @@
+<?XML version="1.0"?>
+<scriptlet>
+	<registration progid="$$PROGID$$" classid="{$$CLASSID$$}" >
+		<script language="vbscript">
+		<![CDATA[
+			$$CODE$$
+		]]>
+		</script>
+	</registration>
+</scriptlet>
+

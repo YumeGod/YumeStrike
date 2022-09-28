@@ -1,0 +1,15 @@
+package org.apache.xmlgraphics.image.loader;
+
+public interface ImageProcessingHints {
+   Object SOURCE_RESOLUTION = "SOURCE_RESOLUTION";
+   Object TARGET_RESOLUTION = "TARGET_RESOLUTION";
+   Object IMAGE_SESSION_CONTEXT = "IMAGE_SESSION_CONTEXT";
+   Object IMAGE_MANAGER = "IMAGE_MANAGER";
+   Object IGNORE_COLOR_PROFILE = "IGNORE_COLOR_PROFILE";
+   Object BITMAP_TYPE_INTENT = "BITMAP_TYPE_INTENT";
+   String BITMAP_TYPE_INTENT_GRAY = "gray";
+   String BITMAP_TYPE_INTENT_MONO = "mono";
+   Object TRANSPARENCY_INTENT = "TRANSPARENCY_INTENT";
+   String TRANSPARENCY_INTENT_PRESERVE = "preserve";
+   String TRANSPARENCY_INTENT_IGNORE = "ignore";
+}

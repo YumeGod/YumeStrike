@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+	<fo:layout-master-set>
+		<!-- layout for the first page -->
+		<fo:simple-page-master  master-name="first"
+			page-height="11in"
+			page-width="8.5in"
+			margin-top="0.5in"
+			margin-bottom="0.25in"
+			margin-left="1in"
+			font-family="sans-serif"
+			margin-right="1in">
+			<fo:region-body margin-top="1.25in" margin-bottom="0.5in" />
+			<fo:region-before extent="0in"/>
+			<fo:region-after extent="0.5in" />
+		</fo:simple-page-master>
+		
+		<fo:simple-page-master  master-name="rest"
+			page-height="11in"
+			page-width="8.5in"
+			font-family="sans-serif"
+			margin-top="0.25in"   
+			margin-bottom="0.25in"
+			margin-left="1in"  
+			margin-right="1in">
+			<fo:region-body margin-top="0.5in" margin-bottom="0.5in" />
+			<fo:region-before extent="0.5in"/>
+			<fo:region-after extent="0.5in" />
+		</fo:simple-page-master>
+	</fo:layout-master-set>
+	<!-- end: defines page layout -->

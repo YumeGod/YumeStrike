@@ -1,0 +1,97 @@
+beacon> help cd
+Use: cd [directory]
+
+Change directory on host
+
+beacon> help clear
+Use: clear
+
+Clear task queue
+
+beacon> help download
+Use: download [file]
+
+Download a file. Go to View -> Downloads to see it
+
+beacon> help shell
+Use: shell [command] [arguments]
+
+Execute the command via the shell
+
+beacon> help exit
+Use: exit
+
+Terminate this session
+
+beacon> help help
+Use: help [command]
+
+Display help for a command
+
+beacon> help socks
+Use: socks [stop|port]
+
+Starts a SOCKS4a server on the specified port. This server will relay
+connections through this SSH session. (Cool? Yes. I think so!)
+
+Use socks stop to stop the SOCKS4a server and terminate existing connections.
+
+Traffic will not relay while parent Beacon is asleep. Change the sleep time with 
+the sleep command to reduce latency.
+
+NOTE: This SSH client does not support multiple asynchronous connection requests.
+Each outgoing connection will block this agent until the connection fails or
+succeeds. I do not recommend pushing a port scan through this SOCKS proxy.
+
+beacon> help sleep
+Use: sleep [time in seconds] <jitter>
+
+Passes a sleep command up to this session's parent Beacon.
+
+beacon> help upload
+Use: upload [/path/to/file]
+
+Upload a file to host
+
+beacon> help pwd
+Use: pwd
+
+Displays the current working directory of this Beacon.
+
+beacon> help rportfwd
+Use: rportfwd [bind port] [forward host] [forward port]
+     rportfwd stop [bind port]
+
+Binds the specified port on the target host. When a connection comes in,
+Cobalt Strike will make a connection to the forwarded host/port and use Beacon+SSH 
+to relay traffic between the two connections.
+
+Note: your SSH daemon may force this bound port to listen on loopback only. Set the
+GatewayPorts option in the sshd_config file to yes or clientspecified to get around
+this.
+
+beacon> help sudo
+Use: sudo [password] [command]
+
+Elevate via sudo with the specified password and run the specified command.
+
+beacon> help download
+Use: download [file]
+
+Download a file. Go to View -> Downloads to see it
+
+beacon> help upload
+Use: upload [/path/to/file]
+
+Upload a file to host
+
+beacon> help connect
+Use: connect [target]
+
+Connect to a TCP Beacon and re-establish control of it. All requests for
+connected Beacon will go through this SSH session.
+
+beacon> help unlink
+Use: unlink [ip address]
+
+Disconnect the specified TCP Beacon.

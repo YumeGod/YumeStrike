@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event-model>
+<producer name="org.apache.fop.render.rtf.RTFEventProducer">
+<method name="onlySPMSupported" severity="WARN">
+<parameter type="java.lang.String" name="masterReference"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="noSPMFound" severity="WARN">
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="explicitTableColumnsRequired" severity="WARN">
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="ignoredDeferredEvent" severity="WARN">
+<parameter type="org.apache.fop.fo.FONode" name="node"/>
+<parameter type="java.lang.Boolean" name="start"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+</producer>
+</event-model>

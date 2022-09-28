@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event-model>
+<producer name="org.apache.fop.render.bitmap.BitmapRendererEventProducer">
+<method name="stoppingAfterFirstPageNoFilename" severity="WARN"/>
+<method name="stoppingAfterFirstPageNoMultiWriter" severity="WARN"/>
+<method name="noImageWriterFound" severity="FATAL" exception="java.io.IOException">
+<parameter type="java.lang.String" name="mime"/>
+</method>
+</producer>
+</event-model>

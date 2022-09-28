@@ -1,0 +1,661 @@
+beacon> help remote-exec
+Use: remote-exec [method] [target] [command]
+
+Run a [command] on [target] via [method].
+
+Type 'remote-exec' by itself to see a list of methods.
+
+beacon> help blockdlls
+Use: blockdlls [start|stop]
+
+Launch child processes with a binary signature policy that blocks 
+non-Microsoft DLLs from loading into the child process.
+
+Use "blockdlls stop" to disable this behavior.
+
+This feature requires Windows 10/Windows Server 2012 or later.
+
+beacon> help argue
+Use: argue [command] [fake arguments]
+     argue [command]
+     argue
+
+Spoof [fake arguments] for [command] processes launched by Beacon.
+This option does not affect runu/spawnu, runas/spawnas, or post-ex jobs.
+
+Use argue [command] to disable this feature for the specified command.
+
+Use argue by itself to list programs with defined spoofed arguments.
+
+beacon> help runasadmin
+Use: runasadmin [exploit] [command] [args]
+
+Attempt to run the specified command in an elevated context.
+
+Type runasadmin by itself to see a list of available local exploits.
+
+beacon> help setenv
+Use: setenv [key] [value]
+
+Set an environment variable.
+
+beacon> help reg
+Use: reg query  [x86|x64] [root\path]
+     reg queryv [x86|x64] [root\path] [subkey]
+
+Use 'query' to query a key within the registry. Lists all subkeys and values.
+
+Use 'queryv' to query a subkey within the registry. Lits only the subkey and 
+its value.
+
+Use HKLM, HKCR, HKCC, HKCU, or HKU for the root.
+
+Specify x86|x64 to force a specific view of the registry.
+
+beacon> help execute-assembly
+Use: execute-assembly [/path/to/file.exe] [arguments]
+
+Executes a local .NET process assembly on target. This command loads the CLR in a temporary
+process and loads the assembly into it.
+
+beacon> help dllload
+Use: dllload [pid] [c:\path\to\file.dll]
+
+Load DLL into specified remote process via LoadLibrary(). The DLL must exist on the target.
+
+beacon> help getprivs
+Use: getprivs
+
+Enable as many system privileges as possible on current token
+
+beacon> help kerberos_ticket_purge
+Use: kerberos_ticket_purge
+
+Purges kerberos tickets from this session
+
+beacon> help kerberos_ccache_use
+Use: kerberos_ccache_use [/path/to/file.ccache]
+
+Applies a Kerberos ticket to this session from ccache file.
+
+beacon> help kerberos_ticket_use
+Use: kerberos_ticket_use [/path/to/file.ticket]
+
+Applies a Kerberos ticket to this session
+
+beacon> help kill
+Use: kill [process id]
+
+Kills the specified process
+
+beacon> help ps
+Use: ps
+
+Shows a list of processes
+
+beacon> help timestomp
+Use: timestomp [fileA] [fileB]
+
+Update the Modified, Access, and Created times of fileA to match those of fileB
+
+beacon> help getuid
+Use: getuid
+
+Prints the User ID associated with the current token
+
+beacon> help rev2self
+Use: rev2self
+
+Revert to your original access token
+
+beacon> help steal_token
+Use: steal_token [pid]
+
+Steal an access token from a process.
+
+beacon> help getsystem
+Use: getsystem
+
+Attempts to get SYSTEM
+
+beacon> help link
+Use: link [target] [pipe]
+     link [target]
+
+Connect to an SMB Beacon and re-establish control of it. All requests for 
+connected Beacon will go through this Beacon. Specify an explicit [pipe]
+to link to that pipename. The default pipe from the current profile sis 
+used otherwise.
+
+beacon> help connect
+Use: connect [target]
+     connect [target] [port]
+
+Connect to a TCP Beacon and re-establish control of it. All requests for 
+connected Beacon will go through this Beacon.
+
+Use 'unlink' to disconnect from a TCP Beacon.
+
+beacon> help cd
+Use: cd [directory]
+
+Change directory on host
+
+beacon> help checkin
+Use: checkin
+
+Forces DNS Beacon to connect to you. During a checkin Beacon posts its host
+metadata and dumps logged keystrokes.
+
+beacon> help clear
+Use: clear
+
+Clear beacon queue
+
+beacon> help download
+Use: download [file]
+
+Download a file. Go to View -> Downloads to see it
+
+beacon> help shell
+Use: shell [command] [arguments]
+
+Execute the command using cmd.exe
+
+beacon> help powershell
+Use: powershell [commandlet] [arguments]
+
+Execute the command using powershell. Any cmdlets from the
+last use of powershell-import are available here too.
+
+beacon> help powershell-import
+Use: powershell-import [/path/to/local/script.ps1]
+
+Import a powershell script which is combined with future
+calls to the powershell command. You may only use one
+imported script at a time.
+
+beacon> help execute
+Use: execute [program] [arguments]
+
+Execute the program. Does not block or return output.
+
+beacon> help run
+Use: run [program] [arguments]
+
+Execute the program. Returns output.
+
+beacon> help exit
+Use: exit
+
+Terminate the beacon session
+
+beacon> help help
+Use: help [command]
+
+Display help for a command
+
+beacon> help inject
+Use: inject [pid] <x86|x64> [listener]
+
+Open the process and inject shellcode for the listener
+
+beacon> help shinject
+Use: shinject [pid] <x86|x64> [/path/to/my.bin]
+
+Open the process and inject shellcode into it
+
+beacon> help shspawn
+Use: shspawn <x86|x64> [/path/to/my.bin]
+
+Spawn a process and inject shellcode into it.
+
+beacon> help dllinject
+Use: dllinject [pid] [/path/to/my.dll]
+
+Open the process and injects a Reflective DLL
+
+beacon> help keylogger
+Use: keylogger [pid] <x86|x64>
+     keylogger
+
+Inject a keystroke logger into the specified process. Use jobkill to terminate
+this task early.
+
+Use keylogger with no arguments to spawn a temporary process and inject the 
+keystroke logger into it.
+
+beacon> help link
+Use: link [ip address]
+
+Link to the Beacon at the specified IP address.
+
+beacon> help unlink
+Use: unlink [ip address]
+     unlink [ip address] [pid]
+
+Disconnect from a named pipe or TCP Beacon.
+
+Specify an IP address or an IP address and session PID to disconnect a specific Beacon.
+
+beacon> help message
+Use: message [text]
+
+Display a message to the user. This is a silly command.
+
+beacon> help mode
+Use: mode [dns|dns6|dns-txt]
+
+Sets Beacon's mode to exchange data with the end-user. This only has an effect
+on a DNS beacon.
+
+mode dns
+--------
+Get tasks with DNS A record requests. Use this option to communicate with DNS 
+when TXT records are not an option. Sends data as DNS requests with data encoded
+inside of the hostname.
+
+mode dns6
+---------
+Get tasks with DNS AAAA record requests. Use this option to communicate with DNS 
+when TXT records are not an option. Sends data as DNS requests with data encoded
+inside of the hostname.
+
+mode dns-txt
+------------
+Get tasks with DNS TXT record requests. This channel carries 189 bytes per 
+request versus 4 bytes for a DNS A record request. Sends data with the same
+technique as the other DNS mode.
+
+beacon> help socks
+Use: socks [stop|port]
+
+Starts a SOCKS4a server on the specified port. This server will relay 
+connections through this Beacon. 
+
+Use socks stop to stop the SOCKS4a server and terminate existing connections.
+
+Traffic will not relay while Beacon is asleep. Change the sleep time with the
+sleep command to reduce latency.
+
+beacon> help sleep
+Use: sleep [time in seconds] <jitter>
+
+Change how often the beacon calls home. Use sleep 0 to force Beacon to call 
+home many times each second. 
+
+Specify a jitter value (0-99) to force Beacon to randomly modify its sleep time.
+
+beacon> help spawn
+Use: spawn [x86|x64] [listener]
+     spawn [listener]
+
+Spawn an x86 or x64 process and inject shellcode for the listener.
+
+beacon> help spawnto
+Use: spawnto [x86|x64] [c:\path\to\whatever.exe]
+
+Sets the executable Beacon spawns x86 and x64 shellcode into. You must specify a
+full-path. Environment variables are OK (e.g., %windir%\sysnative\rundll32.exe)
+
+Do not reference %windir%\system32\ directly. This path is different depending
+on whether or not Beacon is x86 or x64. Use %windir%\sysnative\ and 
+%windir%\syswow64\ instead.
+
+Beacon will map %windir%\syswow64\ to system32 when WOW64 is not present.
+
+beacon> help upload
+Use: upload [/path/to/file]
+
+Upload a file to host
+
+beacon> help runas
+Use: runas [DOMAIN\user] [password] [command] [arguments]
+
+Attempt to execute a program as another user. If you don't specify DOMAIN,
+Beacon will try to authenticate as a local user.
+
+This command will usually fail if you're in a SYSTEM context.
+
+beacon> help pwd
+Use: pwd
+
+Displays the current working directory of this Beacon.
+
+beacon> help covertvpn
+Use: covertvpn [interface] [ip address]
+
+Deploy a Covert VPN to the target's system. You must have administrator
+privileges for the client to work. 
+
+Setup an [interface] through Cobalt Strike -> VPN Interfaces. The 
+[ip address] is the IP address of the target interface you want to deploy
+the VPN client to.
+
+beacon> help browserpivot
+Use: browserpivot [pid] [x86|x64]
+     browserpivot [stop]
+
+Setup a Browser Pivot into the specified process. To hijack authenticated
+web sessions, make sure the process is an Internet Explorer tab. These
+processes have iexplore.exe as their parent process.
+
+Use "browserpivot stop" to tear down the browser pivoting sessions 
+associated with this Beacon.
+
+beacon> help desktop
+Use: desktop [pid] [x86|x64] [high|low]
+     desktop [high|low]
+
+Injects a VNC server onto the target and connects to it. You may specify
+whether or not the session is high or low-quality.
+
+beacon> help jobs
+Use: jobs
+
+Lists long-running post-exploitation tasks. 
+
+beacon> help jobkill
+Use: jobkill [job ID]
+
+Stop a long-running post-exploitation task.
+
+beacon> help hashdump
+Use: hashdump
+
+Dump password hashes (Warning: Injects into LSASS)
+
+beacon> help mimikatz
+Use: mimikatz [module::command] <args>
+     mimikatz [!module::command] <args>
+     mimikatz [@module::command] <args>
+
+Runs a mimikatz command. 
+
+Use ! to make mimikatz elevate to SYSTEM before it runs your command. Some
+commands require this.
+
+Use @ to make mimikatz impersonate Beacon's thread token before it runs your
+command. This is helpful for mimikatz commands that interact with remote
+systems (e.g., lsadump::dcsync)
+
+beacon> help pth
+Use: pth [DOMAIN\user] [NTLM hash]
+
+Uses mimikatz to generate AND impersonate a token that uses the specified
+DOMAIN, user, and NTLM hash as single sign-on credentials. Beacon will pass
+this hash when you interact with network resources.
+
+beacon> help screenshot
+Use: screenshot [pid] <x86|x64> [run time in seconds]
+     screenshot 
+
+Inject a screenshot tool into a specific process. Sends a screenshot of the
+user's desktop (one per Beacon check-in) for the specified number of seconds.
+Use jobkill to terminate this task early.
+
+If the user is idle, the screenshot tool will only send one screenshot every
+three minutes. This mechanism makes it easier to monitor many desktops at one 
+time. 
+
+beacon> help make_token
+Use: make_token [DOMAIN\user] [password]
+
+Clone the current access token and set it up to pass the specified username
+and password when you interact with network resources. This command does not
+validate the credentials you provide and it has no effect on local actions.
+
+beacon> help downloads
+Use: downloads
+
+Lists file downloads currently in progress.
+
+beacon> help cancel
+Use: cancel [*file*]
+
+Cancels a download that is currently in progress. Wildcards are OK.
+
+beacon> help rportfwd
+Use: rportfwd [bind port] [forward host] [forward port]
+     rportfwd stop [bind port]
+
+Binds the specified port on the target host. When a connection comes in,
+Cobalt Strike will make a connection to the forwarded host/port and use Beacon
+to relay traffic between the two connections.
+
+beacon> help elevate
+Use: elevate [exploit] [listener]
+
+Attempt to spawn an elevated session with the specified exploit.
+
+Type elevate by itself to see a list of available local exploits.
+
+beacon> help jump
+Use: jump [exploit] [target] [listener]
+
+Attempt to spawn a session on a remote target with the specified exploit.
+
+Type jump by itself to see a list of available remote exploits.
+
+beacon> help mkdir
+Use: mkdir [folder]
+
+Make a directory
+
+beacon> help ls
+Use: ls [folder]
+
+Lists files in a folder
+
+beacon> help rm
+Use: rm [folder]
+
+Removes a file or folder
+
+beacon> help drives
+Use: drives
+
+Lists drives on current system
+
+beacon> help spawnas
+Use: spawnas [DOMAIN\user] [password] [listener]
+
+Attempt to spawn a payload as another user. If you don't specify DOMAIN,
+Beacon will try to authenticate as a local user.
+
+This command will usually fail if you're in a SYSTEM context. Use make_token
+to create a token to pass the desired credentials instead.
+
+beacon> help portscan
+Use: portscan [targets] [ports] [arp|icmp|none] [max connections]
+
+Launches a port scan against the specified hosts. 
+
+[targets] is a comma separated list of hosts to scan. You may also specify
+IPv4 address ranges (e.g., 192.168.1.128-192.168.2.240, 192.168.1.0/24)
+
+[ports] is a comma separated list or ports to scan. You may specify port
+ranges as well (e.g., 1-65535)
+
+The [arp|icmp|none] options dictate how the port scanning tool will determine
+if a host is alive. The ARP option uses ARP to see if a system responds to the
+specified address. The ICMP option sends an ICMP echo request. The none option 
+tells the portscan tool to assume all hosts are alive.
+
+The [max connections] option limits how many connections the port scan tool
+will attempt at any one time. The portscan tool uses asynchronous I/O and
+it's able to handle a large number of connections at one time. A higher value
+will make the portscan go much faster. The default is 1024.
+
+beacon> help net
+Use: net [command] [arguments]
+
+Beacons's host and network enumeration tool. The built-in net commands are:
+
+        Command             Description
+        -------             -----------
+        computers           lists hosts in a domain (groups)
+        domain              display domain for this host
+        dclist              lists domain controllers
+        domain_controllers  lists DCs in a domain (groups) 
+        domain_trusts       lists domain trusts
+        group               lists groups and users in groups
+        localgroup          lists local groups and users in local groups
+        logons              lists users logged onto a host
+        sessions            lists sessions on a host
+        share               lists shares on a host
+        user                lists users and user information
+        time                show time for a host
+        view                lists hosts in a domain (browser service)
+
+Use "help net [command]" for more information. 
+
+beacon> help net dclist
+Use: net dclist <DOMAIN>
+
+Lists domain controllers for the specified domain. If no domain is specified
+this command will use the current domain. 
+
+beacon> help net domain
+Use: net domain
+
+Find active directory domain for this system
+
+beacon> help net domain_trusts
+Use: net domain_trusts <DOMAIN>
+
+Lists domain trusts for the specified domain. If no domain is specified this
+command will use the current domain.
+
+beacon> help net group
+Use: net group <\\TARGET> <GROUPNAME>
+
+Use net group by itself to enumerate groups on a domain controller. You may
+specify a specific domain controller with the target option. Specify a group
+name to get a list of users in a group on a domain controller.
+
+beacon> help net localgroup
+Use: net localgroup <\\TARGET> <GROUPNAME>
+
+Use net localgroup by itself to enumerate local groups on this system. Specify
+a target to enumerate local groups on a remote system. Specify a group name to
+get a list of user in a local group on a target.
+
+beacon> help net logons
+Use: net logons <\\TARGET>
+
+Lists users logged onto a target.
+
+beacon> help net sessions
+Use: net sessions <\\TARGET>
+
+Lists sessions on a target
+
+beacon> help net share
+Use: net share <\\TARGET>
+
+Lists shares on a target
+
+beacon> help net time
+Use: net time <\\TARGET>
+
+Show time for the target
+
+beacon> help net user
+Use: net user <\\TARGET> <USER>
+
+Use net user by itself to list users on this system. Specify a target to list
+users on a remote system. Specify a user to get information about a user.
+
+beacon> help net view
+Use: net view <DOMAIN>
+
+Use net view by itself to list hosts on the current domain. Specify a domain
+to list hosts on another domain.
+
+beacon> help net computers
+Use: net computers <DOMAIN.FQDN>
+
+Use net computers to list hosts from the Domain Computers and Domain Controllers
+groups on the specified domain. Please specify the DOMAIN as a fully-qualified
+domain name.
+
+beacon> help net domain_controllers
+Use: net domain_controllers <DOMAIN.FQDN>
+
+Use net domain_controllers to list hosts from the Domain Controllers group on
+the specified domain. Please specify the DOMAIN as a fully-qualified domain name.
+
+beacon> help logonpasswords
+Use: logonpasswords
+
+Uses mimikatz to dump plaintext credentials and NTLM hashes
+
+beacon> help note
+Use: note [text]
+
+Assigns a note to this Beacon.
+
+beacon> help dcsync
+Use: dcsync [DOMAIN.fqdn] <DOMAIN\user>
+
+Uses mimikatz to extract the NTLM password hash for domain users from the 
+domain controller. Specify a user to get their hash only. This command 
+requires a domain administrator trust relationship.
+
+beacon> help powerpick
+Use: powerpick [commandlet] [arguments]
+
+Execute the command using Unmanaged PowerShell. Any cmdlets from the
+last use of powershell-import are available here too.
+
+beacon> help psinject
+Use: psinject [pid] [arch] [commandlet] [arguments]
+
+Inject Unmanaged PowerShell into a specific process and execute the
+specified command. Any cmdlets from the last use of powershell-import are 
+available here too.
+
+beacon> help ssh
+Use: ssh [target:port] [user] [pass]
+
+Spawn an SSH client and attempt to login to the specified target
+
+beacon> help ssh-key
+Use: ssh [target:port] [user] [/path/to/key.pem]
+
+Spawn an SSH client and attempt to login to the specified target
+
+beacon> help cp
+Use: cp [source file] [dest file]
+
+Copy source file to the specified destination
+
+beacon> help mv
+Use: mv [source file] [dest file]
+
+Move source file to the specified destination
+
+beacon> help ppid
+Use: ppid [pid]
+
+Use specified PID as parent for processes Beacon launches. The runas command
+is not affected, but most other commands are.
+
+Type ppid by itself to reset to default behavior.
+
+WARNING: Do not specify a parent PID in another desktop session. This may 
+break several of Beacon's features and workflows. Use runu if you want to run 
+a command under a parent in another desktop session.
+
+beacon> help runu
+Use: runu [pid] [command] [arguments]
+
+Attempt to execute a program with the specified PID as its parent. This program
+will run with the identity of the specified PID.
+
+beacon> help spawnu
+Use: spawnu [pid] [listener]
+
+Attempt to spawn a session with the specified PID as its parent. This session
+will run with the identity of the specified PID.

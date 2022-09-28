@@ -1,0 +1,43 @@
+#
+# useful aggressor script console commands.
+#
+
+# a few commands to make the script console more interesting.
+command ? {
+	local('$__expression $__error');
+	$__expression = 'iff(' . substr($0, 2) . ')';
+	if (checkError($__error) isa ^sleep.error.YourCodeSucksException) {
+		println([$__error formatErrors]);
+	}
+	else {
+		if (expr($__expression)) {
+			println("true");
+		}
+		else {
+			println("false");
+		}
+	}
+}
+
+command x {
+	local('$__x $__error');
+	$__x = expr(substr($0, 2));
+	if (checkError($__error) isa ^sleep.error.YourCodeSucksException) {
+		println([$__error formatErrors]);
+	}
+	else {
+		println($__x);
+	}
+}
+
+command e {
+	local('$__error');
+	eval(substr($0, 2));
+	if (checkError($__error) isa ^sleep.error.YourCodeSucksException) {
+		println([$__error formatErrors]);
+	}
+}
+
+command exit {
+	[System exit: 0];
+}

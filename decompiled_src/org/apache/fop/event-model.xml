@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event-model>
+<producer name="org.apache.fop.ResourceEventProducer">
+<method name="imageNotFound" severity="ERROR">
+<parameter type="java.lang.String" name="uri"/>
+<parameter type="java.io.FileNotFoundException" name="fnfe"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="imageError" severity="ERROR">
+<parameter type="java.lang.String" name="uri"/>
+<parameter type="org.apache.xmlgraphics.image.loader.ImageException" name="e"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="imageIOError" severity="ERROR">
+<parameter type="java.lang.String" name="uri"/>
+<parameter type="java.io.IOException" name="ioe"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="imageWritingError" severity="ERROR">
+<parameter type="java.lang.Exception" name="e"/>
+</method>
+<method name="uriError" severity="ERROR">
+<parameter type="java.lang.String" name="uri"/>
+<parameter type="java.lang.Exception" name="e"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="ifoNoIntrinsicSize" severity="ERROR">
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="foreignXMLProcessingError" severity="ERROR">
+<parameter type="org.w3c.dom.Document" name="doc"/>
+<parameter type="java.lang.String" name="namespaceURI"/>
+<parameter type="java.lang.Exception" name="e"/>
+</method>
+<method name="foreignXMLNoHandler" severity="ERROR">
+<parameter type="org.w3c.dom.Document" name="doc"/>
+<parameter type="java.lang.String" name="namespaceURI"/>
+</method>
+<method name="cannotDeleteTempFile" severity="ERROR">
+<parameter type="java.io.File" name="tempFile"/>
+</method>
+<method name="catalogResolverNotFound" severity="ERROR"/>
+<method name="catalogResolverNotCreated" severity="ERROR">
+<parameter type="java.lang.String" name="message"/>
+</method>
+</producer>
+</event-model>

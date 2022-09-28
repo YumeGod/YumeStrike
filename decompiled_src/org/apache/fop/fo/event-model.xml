@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event-model>
+<producer name="org.apache.fop.fo.FOValidationEventProducer">
+<method name="tooManyNodes" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="org.apache.xmlgraphics.util.QName" name="offendingNode"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="nodeOutOfOrder" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.String" name="tooLateNode"/>
+<parameter type="java.lang.String" name="tooEarlyNode"/>
+<parameter type="java.lang.Boolean" name="canRecover"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="invalidChild" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="org.apache.xmlgraphics.util.QName" name="offendingNode"/>
+<parameter type="java.lang.String" name="ruleViolated"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="missingChildElement" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.String" name="contentModel"/>
+<parameter type="java.lang.Boolean" name="canRecover"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="missingProperty" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.String" name="propertyName"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="idNotUnique" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.String" name="id"/>
+<parameter type="java.lang.Boolean" name="canRecover"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="colorProfileNameNotUnique" severity="WARN">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.String" name="name"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="masterNameNotUnique" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.String" name="name"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="markerBlockContainerAbsolutePosition" severity="ERROR">
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="markerNotInitialChild" severity="ERROR">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.String" name="mcname"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="markerNotUniqueForSameParent" severity="ERROR">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.String" name="mcname"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="invalidProperty" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="org.apache.xmlgraphics.util.QName" name="attr"/>
+<parameter type="java.lang.Boolean" name="canRecover"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="invalidPropertyValue" severity="ERROR">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.String" name="propName"/>
+<parameter type="java.lang.String" name="propValue"/>
+<parameter type="org.apache.fop.fo.expr.PropertyException" name="e"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="unimplementedFeature" severity="WARN">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.String" name="feature"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="missingLinkDestination" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="markerCloningFailed" severity="ERROR">
+<parameter type="java.lang.String" name="markerClassName"/>
+<parameter type="org.apache.fop.apps.FOPException" name="fe"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="regionNameMappedToMultipleRegionClasses" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="regionName"/>
+<parameter type="java.lang.String" name="defaultRegionClass1"/>
+<parameter type="java.lang.String" name="defaultRegionClass2"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="duplicateFlowNameInPageSequence" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.String" name="flowName"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="flowNameNotMapped" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.String" name="flowName"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="masterNotFound" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.String" name="masterReference"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="illegalRegionName" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.String" name="regionName"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="nonZeroBorderPaddingOnRegion" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="java.lang.String" name="regionName"/>
+<parameter type="java.lang.Boolean" name="canRecover"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="columnCountErrorOnRegionBodyOverflowScroll" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="invalidFORoot" severity="FATAL" exception="org.apache.fop.fo.ValidationException">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="emptyDocument" severity="FATAL" exception="org.apache.fop.fo.ValidationException"/>
+<method name="unknownFormattingObject" severity="WARN">
+<parameter type="java.lang.String" name="elementName"/>
+<parameter type="org.apache.xmlgraphics.util.QName" name="offendingNode"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+<method name="altTextMissing" severity="WARN">
+<parameter type="java.lang.String" name="foElement"/>
+<parameter type="org.xml.sax.Locator" name="loc"/>
+</method>
+</producer>
+</event-model>

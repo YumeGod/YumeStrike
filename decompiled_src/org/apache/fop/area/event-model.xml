@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event-model>
+<producer name="org.apache.fop.area.AreaEventProducer">
+<method name="unresolvedIDReference" severity="WARN">
+<parameter type="java.lang.String" name="type"/>
+<parameter type="java.lang.String" name="id"/>
+</method>
+<method name="unresolvedIDReferenceOnPage" severity="WARN">
+<parameter type="java.lang.String" name="page"/>
+<parameter type="java.lang.String" name="id"/>
+</method>
+<method name="pageLoadError" severity="ERROR">
+<parameter type="java.lang.String" name="page"/>
+<parameter type="java.lang.Exception" name="e"/>
+</method>
+<method name="pageSaveError" severity="ERROR">
+<parameter type="java.lang.String" name="page"/>
+<parameter type="java.lang.Exception" name="e"/>
+</method>
+<method name="pageRenderingError" severity="ERROR">
+<parameter type="java.lang.String" name="page"/>
+<parameter type="java.lang.Exception" name="e"/>
+</method>
+</producer>
+</event-model>

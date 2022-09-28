@@ -1,0 +1,88 @@
+Cobalt Strike makes use of code and/or content from the following sources:
+
+Adversarial Tactics, Techniques, and Common Knowledge (ATT&CK) - (c) 2017 The MITRE Corporation. (This work is reproduced and distributed with the permission of The MITRE Corporation.)
+https://attack.mitre.org/
+
+Apache FOP - (c) 1999-2010 The Apache Software Foundation (Apache 2.0 License)
+http://xmlgraphics.apache.org/fop/
+
+Apache JAMES Mime4j - (c) 2004-2010 The Apache Software Foundation (Apache 2.0 License)
+http://james.apache.org/mime4j/
+
+Draggable Tabbed Pane - (c) Tom Martin (Creative Commons 3.0 Share-Alike [Attribution Required] License)
+http://stackoverflow.com/questions/60269/how-to-implement-draggable-tab-using-java-swing
+
+ipcalf - (c) 2012-2014 Nathan Vander Wilt (MIT License)
+https://github.com/natevw/ipcalf
+
+ISO C9x  compliant stdint.h for Microsoft Visual Studio - (c) 2006-2013 Alexander Chemeris (BSD License)
+https://github.com/chemeris/msinttypes/blob/master/stdint.h
+
+JGraphX - (c) JGraph Ltd 2006-2012 (BSD License)
+http://www.jgraphx.com/
+
+jQuery - (c) The jQuery Foundation 2012 (MIT License)
+http://www.jquery.com/
+
+Jsign 1.3 - (c) Emmanuel Bourg (Apache 2.0 License)
+http://ebourg.github.com/jsign
+
+libssh2 - SSH2 library - (c) Sara Golemon et al. (BSD License)
+https://github.com/libssh2/libssh2
+
+LibTomCrypt - developed by Tom St Denis (Public Domain/WTFPL)
+http://libtom.org/?page=index&newsitems=5&whatfile=crypt
+
+Metasploit Framework - (c) Rapid7 Inc. 2012 (BSD License)
+http://www.metasploit.com/
+
+mbed TLS 2.14.1 - (c) 2018 ARM Limited (Apache 2.0 License)
+https://tls.mbed.org/
+
+Mimikatz 2.2 - (c) Benjamin 'gentilkiwi' Delpy (Creative Commons Attribution 4.0)
+License: http://creativecommons.org/licenses/by/4.0/
+http://blog.gentilkiwi.com/
+
+Mono Icon Set - (c) Gentleface Inc. (Royalty Free License to Strategic Cyber LLC)
+http://www.gentleface.com/free_icon_set.html
+
+msfgui - (c) Matt Weeks 2010-2012 (BSD License)
+http://www.metasploit.com/
+
+NanoHTTPD - (c) 2001,2005-2012 J. Elonen and (c) 2010 K. Togias (Modified BSD License)
+http://elonen.iki.fi/code/nanohttpd/
+
+PowerShell Native API Functions - (c) 2012, Matt Graeber (BSD License)
+http://www.exploit-monday.com/2012/05/accessing-native-windows-api-in.html
+
+Reflective DLL Injection - (c) 2011, Stephen Fewer of Harmony Security (BSD License)            
+https://github.com/stephenfewer/ReflectiveDLLInjection
+
+Synthetica Look and Feel - (c) Jyloo Software (Commercial License to Strategic Cyber LLC)
+http://www.jyloo.com/synthetica/
+
+tango-icon-theme-package - Tango Desktop Project (Public Domain)
+http://tango.freedesktop.org/
+
+TightVNC Java Viewer - (c) GlavSoft LLC (Commercial License to Strategic Cyber LLC)
+http://www.tightvnc.com/
+
+UACME - (c) UACME Project, hFiref0x (BSD License)
+https://github.com/hfiref0x/UACME/
+
+Unmanaged PowerShell - (c) 2015, Lee Christensen (BSD License) 
+https://github.com/leechristensen/UnmanagedPowerShell
+
+user-agent-utils 1.13 - (c) Harald Walker (BSD License)
+https://github.com/HaraldWalker/user-agent-utils
+
+WinPcap - (c) 2005-2010 CACE Technologies (BSD License)
+http://www.winpcap.org/
+
+XMLmind XSL-FO Converter - (c) 2002-2012 Pixware SARL (Developer License to Strategic Cyber LLC)
+http://www.xmlmind.com/foconverter/
+
+Cobalt Strike distributes the following third-party programs for deployment as needed:
+
+TightVNC 1.3.10 - (c) 2000-2009 TightVNC Group and others (GPLv2 License)
+https://github.com/rsmudge/vncdll
